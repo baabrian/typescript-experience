@@ -1,9 +1,7 @@
 import { User } from './models/User';
 
-const user = new User({
-  name: 'douwahuiodhsakdhaksjhdakjlcbmznxbczm',
-  age: 3,
-  id: 3,
+const user = User.buildUser({
+  name: 'NEWER NAME LMAO',
 });
 
 user.on('change', () => {
@@ -11,6 +9,7 @@ user.on('change', () => {
 });
 
 user.save();
-user.save();
+
+console.log(user.hasAge());
 
 user.fetch();

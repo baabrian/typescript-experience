@@ -2105,12 +2105,13 @@ var User_1 = require("./models/User");
 
 var user = new User_1.User({
   name: 'douwahuiodhsakdhaksjhdakjlcbmznxbczm',
-  age: 12,
+  age: 3,
   id: 3
 });
 user.on('change', function () {
   console.log(user);
 });
+user.save();
 user.save();
 user.fetch();
 },{"./models/User":"src/models/User.ts"}],"C:/Users/Brian/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -2141,7 +2142,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52768" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63061" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

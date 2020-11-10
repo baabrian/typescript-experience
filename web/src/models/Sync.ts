@@ -1,10 +1,11 @@
 import axios, { AxiosPromise } from 'axios';
+import { Syncs } from '../interfaces';
 
 interface HasId {
   id?: number;
 }
 
-export class Sync<T extends HasId> {
+export class Sync<T extends HasId> implements Sync<T> {
   constructor(public rootUrl: string) {}
 
   fetch(id: number): AxiosPromise {

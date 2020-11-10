@@ -1,6 +1,8 @@
+import { Events } from '../interfaces';
+
 type Callback = () => void;
 
-export class Eventing {
+export class Eventing implements Events {
   events: { [key: string]: Callback[] } = {};
 
   on = (eventName: string, callback: Callback): void => {

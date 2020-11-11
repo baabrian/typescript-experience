@@ -2,6 +2,7 @@ import { Model } from './Model';
 import { Attributes } from './Attributes';
 import { ApiSync } from './ApiSync';
 import { Eventing } from './Eventing';
+import { Collection } from './Collection';
 
 export interface UserProps {
   name?: string;
@@ -19,8 +20,14 @@ export class User extends Model<UserProps> {
       new ApiSync<UserProps>(ROOTURL)
     );
   }
+  static buildUserCollection(): Collection<User, UserProps> {
+    return new Collection<User, UserProps>(ROOTURL, (json: UserProps) =>
+      User.buildUser(json)
+    );
+  }
 
-  hasAge() {
-    return this.get('age') || false;
+  setRandomAge(): void {
+    const age = Math.round(Math.random() * 100);
+    this.set({ age });
   }
 }

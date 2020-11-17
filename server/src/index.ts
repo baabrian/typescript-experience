@@ -7,6 +7,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieSession({ keys: ['2313iklj21ljkdasdasdo8cuvoixchvxc'] }));
+
 app.use(router);
 
 app.get('/', (req: Request, res: Response) => {

@@ -1,16 +1,16 @@
 import express, { Request, Response } from 'express';
-import { router as loginRoutes } from './routes/loginRoutes';
+//import { router as loginRoutes } from './routes/loginRoutes';
 import bodyParser from 'body-parser';
 import cookieSession from 'cookie-session';
 import { AppRouter } from './AppRouter';
 import './controllers/LoginController';
+import './controllers/RouteController';
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieSession({ keys: ['2313iklj21ljkdasdasdo8cuvoixchvxc'] }));
 
-app.use(loginRoutes);
 app.use(AppRouter.getInstance());
 
 app.get('/', (req: Request, res: Response) => {
